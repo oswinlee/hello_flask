@@ -17,8 +17,11 @@ def about():
 def contact():
     return render_template("contact.html")
 
+#@app.route("/hello", defaults={'name':'Oswinlee'})
+@app.route("/hello/")
 @app.route("/hello/<name>")
-def hello_there(name):
+#default value is oswinlee for name variable
+def hello_there(name='oswinlee'):
     return render_template(
         "hello_there.html",
         name = name,
